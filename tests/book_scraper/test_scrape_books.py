@@ -29,7 +29,7 @@ def _mock_scraper(requests_mock, mocker):
         "http://books.toscrape.com/catalogue/page-2.html", status_code=404
     )
     mocker.patch("books_scraper.scraper.get_book_data", return_value=book)
-    return scraper.scrape_books()
+    return scraper.scrape_books(filename='tmp/test_books_data.txt')
 
 
 def test_books_type(_mock_scraper):
