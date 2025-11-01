@@ -96,7 +96,7 @@ def scrape_books(is_save: bool = True, filename: str = "books_data.txt") -> list
 
     if is_save:
         with open(f"{ROOT_PATH}/artifacts/{filename}", "w", encoding="utf-8") as f:
-            f.write("\n".join(str(result)))
+            f.write("".join(str(result)))
     print(
         "Scraping is finished. "
         f"Checked {i - 1} pages, archived {len(result)} books."
