@@ -1,0 +1,28 @@
+[project]
+name = "books-scraper"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Lilya-te",email = "k.9602585349@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "pytest (>=8.4.2,<9.0.0)",
+    "django-scheduler (>=0.10.1,<0.11.0)",
+    "requests (>=2.32.5,<3.0.0)",
+    "beautifulsoup4 (>=4.14.2,<5.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "books_scraper", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pylint."MASTER"]
+init-hook="import sys; sys.path.insert(0, 'src')"
+
+[tool.pytest.ini_options]
+pythonpath = "src"
